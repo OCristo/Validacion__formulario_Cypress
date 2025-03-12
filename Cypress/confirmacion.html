@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Cs/css.css">
+    <script src="Js/js.js"></script>
+</head>
+<body>
+    <div id="confirmation-page" class="confirmation">
+        <h2>¡Bienvenido/a <span id="user-name"></span>!</h2>
+        <p>Tu registro se ha completado correctamente.</p>
+        
+        <h3>Resumen de información:</h3>
+        <p class="user-info"><strong>Nombre:</strong> <span id="summary-nombre"></span></p>
+        <p class="user-info"><strong>Correo electrónico:</strong> <span id="summary-email"></span></p>
+        <p class="user-info"><strong>Fecha de nacimiento:</strong> <span id="summary-fecha"></span></p>
+        <p class="user-info"><strong>Suscripción a promociones:</strong> <span id="summary-promociones"></span></p>
+        
+        <div class="btn-group">
+            <button class="btn-secondary" onclick="volverInicio()">Volver al inicio</button>
+            <button class="btn-primary" onclick="irAreaUsuario()">Ir a mi área de usuario</button>
+        </div>
+    </div>
+</body>
+</html>
