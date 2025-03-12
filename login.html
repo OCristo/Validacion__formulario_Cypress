@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="Cs/css.css">
+    <script src="Js/login.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Formulario de registro -->
+        <form id="registro-form">
+            <h1>Crear cuenta</h1>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" >
+                <div class="error" id="nombre-error">Este campo es obligatorio</div>
+                <div class="error" id="nombre-caracteres-error">No se permiten caracteres especiales</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" >
+                <div class="error" id="email-error">Este campo es obligatorio</div>
+                <div class="error" id="email-formato-error">Por favor, introduce un correo electrónico válido</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña *</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" >
+                    <span class="toggle-password" onclick="togglePasswordVisibility('password')">👁️</span>
+                </div>
+                <div class="error" id="password-error">Este campo es obligatorio</div>
+                <div class="error" id="password-longitud-error">La contraseña debe tener al menos 8 caracteres</div>
+                <div class="error" id="password-formato-error">La contraseña debe incluir al menos una letra mayúscula, una minúscula y un número</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmar-password">Repetir contraseña *</label>
+                <div class="password-container">
+                    <input type="password" id="confirmar-password" name="confirmar-password" >
+                    <span class="toggle-password" onclick="togglePasswordVisibility('confirmar-password')">👁️</span>
+                </div>
+                <div class="error" id="confirmar-password-error">Este campo es obligatorio</div>
+                <div class="error" id="confirmar-password-match-error">Las contraseñas no coinciden</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="fecha-nacimiento">Fecha de nacimiento (opcional)</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terminos" name="terminos" >
+                <label for="terminos">He leído y acepto la <a href="#" target="_blank">política de privacidad</a> *</label>
+            </div>
+            <div class="error" id="terminos-error">Debes aceptar los términos y condiciones para continuar</div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="promociones" name="promociones">
+                <label for="promociones">Recibir descuentos exclusivos, novedades y tendencias por e-mail. Me puedo dar de baja desde mi panel</label>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submit-btn">Crear cuenta</button>
+            
+            <p style="text-align: center; margin-top: 20px;">
+                ¿Ya tienes una cuenta? <a href="#">Iniciar sesión</a>
+            </p>
+        </form>
+        
+        <!-- Página de confirmación (inicialmente oculta) -->
+        <div id="confirmation-page" class="confirmation">
+            <h2>¡Bienvenido/a <span id="user-name"></span>!</h2>
+            <p>Tu registro se ha completado correctamente.</p>
+            
+            <h3>Resumen de información:</h3>
+            <p class="user-info"><strong>Nombre:</strong> <span id="summary-nombre"></span></p>
+            <p class="user-info"><strong>Correo electrónico:</strong> <span id="summary-email"></span></p>
+            <p class="user-info"><strong>Fecha de nacimiento:</strong> <span id="summary-fecha"></span></p>
+            <p class="user-info"><strong>Suscripción a promociones:</strong> <span id="summary-promociones"></span></p>
+            
+            <div class="btn-group">
+                <button class="btn-secondary" onclick="volverInicio()">Volver al inicio</button>
+                <button class="btn-primary" onclick="irAreaUsuario()">Ir a mi área de usuario</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
